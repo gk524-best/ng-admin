@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <div class="sidebar-head" [class.center]="!logo">
+    <div *ngIf="logo" class="logo"><img src="" /></div>
+    <a class="title">
+      <span>{{title}}</span>
+    </a>
+  </div>
+  <div class="sidebar-menu">
+    <app-menu [menus]="menus"></app-menu>
+  </div>
+</div>

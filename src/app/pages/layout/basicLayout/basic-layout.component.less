@@ -1,0 +1,29 @@
+.layout,
+.layout-container {
+  width: 100vw;
+  max-width: 1920px;
+  min-height: 100vh;
+}
+
+.layout-container {
+  padding-left: 256px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-content {
+  display: flex;
+  flex: 1 0;
+  flex-direction: row;
+  width: 100%;
+  .columns {
+    display: flex;
+    flex: 1 0;
+  }
+}

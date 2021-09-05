@@ -1,0 +1,30 @@
+<ng-container *ngIf="!menuItem.group && !menuItem.children">
+  <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+    <i nz-icon [nzType]="menuItem.icon" *ngIf="menuItem.icon"></i>
+    <span>{{menuItem.title}}</span>
+  </li>
+</ng-container>
+
+<ng-container *ngIf="menuItem.group && !menuItem.children">
+  <li nz-menu-group [nzTitle]="menuItem.title"></li>
+</ng-container>
+
+<ng-container *ngIf="menuItem.group && menuItem.children">
+  <li nz-menu-group [nzTitle]="menuItem.title">
+    <ul>
+      <ng-container *ngFor="let item of menuItem.children">
+        <div appMenuItem [menuItem]="item"></div>
+      </ng-container>
+    </ul>
+  </li>
+</ng-container>
+
+<ng-container *ngIf="!menuItem.group && menuItem.children">
+  <li nz-submenu [nzTitle]="menuItem.title" [nzIcon]="menuItem.icon ? menuItem.icon : ''">
+    <ul>
+      <ng-container *ngFor="let item of menuItem.children">
+        <div appMenuItem [menuItem]="item"></div>
+      </ng-container>
+    </ul>
+  </li>
+</ng-container>

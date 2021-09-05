@@ -6,6 +6,9 @@
     "ng-admin": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -24,10 +27,16 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/app/theme/main.less",
+              "src/app/theme/default.less"
             ],
             "scripts": []
           },
@@ -94,7 +103,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           }
